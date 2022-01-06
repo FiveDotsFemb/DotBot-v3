@@ -1,0 +1,1 @@
+another version of the bot, using typescript this time
