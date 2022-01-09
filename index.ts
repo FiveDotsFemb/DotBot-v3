@@ -13,12 +13,4 @@ client.on('ready', () => {
     console.log('Logged in')
 })
 
-client.on('messageCreate', (message) => {
-    if (message.content === 'kill me') {
-        message.reply({
-            content: 'yes sir',
-        })
-    }
-})
-
 client.login(process.env.TOKEN)
