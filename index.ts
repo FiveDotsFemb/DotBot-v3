@@ -10,7 +10,7 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', () => {
-    console.log('The bot is ready')
+    console.log('Logged in')
 })
 
 client.on('messageCreate', (message) => {
