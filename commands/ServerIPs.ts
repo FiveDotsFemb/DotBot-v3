@@ -8,7 +8,7 @@ export default {
   testOnly: true,
   permissions: ["ADMINISTRATOR"],
 
-  callback: async ({ message, text }) => {
+  callback: async ({ message }) => {
     const embed = new MessageEmbed()
       .setTitle("All current Femboy KZ Servers and their IPs")
       .setDescription("** **")
