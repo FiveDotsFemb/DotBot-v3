@@ -3,7 +3,7 @@ import WOKCommands from "wokcommands";
 import path from "path";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import testSchema from "./test-schema";
+import testSchema from "./models/test-schema";
 dotenv.config();
 
 const client = new DiscordJS.Client({
@@ -21,7 +21,8 @@ client.on("ready", async () => {
   });
 
   new WOKCommands(client, {
-    commandDir: path.join(__dirname, "commands"),
+    commandsDir: path.join(__dirname, "commands"),
+    featuresDir: path.join(__dirname, "features"),
     typeScript: true,
     testServers: ["752232440579227848", "858419058135662622"],
     botOwners: ["289767921956290580"],
