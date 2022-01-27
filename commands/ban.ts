@@ -29,8 +29,8 @@ export default {
     args.shift();
     const reason = args.join(" ");
     target.ban({
-        reason,
-        days: 7,
+      reason,
+      days: 7,
     });
     return {
       custom: true,

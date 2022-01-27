@@ -1,4 +1,4 @@
-import { Client, TextChannel, WelcomeChannel } from "discord.js";
+import { Client, TextChannel } from "discord.js";
 import welcomeSchema from "../models/welcome-schema";
 
 const welcomeData = {} as {
@@ -21,7 +21,6 @@ export default (client: Client) => {
     }
     data[0].send({
       content: data[1].replace(/@/g, `<@${id}>`),
-      allowedMentions: {},
     });
   });
 };

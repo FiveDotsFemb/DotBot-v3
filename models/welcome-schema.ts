@@ -1,4 +1,3 @@
-import { WelcomeChannel } from "discord.js";
 import mongoose, { Schema } from "mongoose";
 
 const reqString = {
