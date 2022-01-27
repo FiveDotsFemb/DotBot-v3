@@ -16,9 +16,9 @@ const client = new DiscordJS.Client({
 });
 
 client.on("ready", async () => {
-  await mongoose.connect(process.env.MONGO_URI || "", {
-    keepAlive: true,
-  });
+  // await mongoose.connect(process.env.MONGO_URI || "", {
+  //   keepAlive: true,
+  // });
 
   new WOKCommands(client, {
     commandsDir: path.join(__dirname, "commands"),
@@ -26,7 +26,7 @@ client.on("ready", async () => {
     typeScript: true,
     testServers: ["752232440579227848", "858419058135662622"],
     botOwners: ["289767921956290580"],
-    // mongoUri: process.env.MONGO_URI,
+    mongoUri: process.env.MONGO_URI,
   });
 });
 
