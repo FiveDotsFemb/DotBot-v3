@@ -6,8 +6,8 @@ export default {
   slash: "both",
   testOnly: true,
   ownerOnly: true,
-  minArgs: 2,
-  expectedArgs: "<activity> <status>",
+  minArgs: 1,
+  expectedArgs: "<status>",
 
   callback: ({ client, text }) => {
     client.user?.setPresence({
