@@ -4,6 +4,7 @@ import { ICommand } from "wokcommands";
 export default {
   category: "General",
   description: "Sends an Embed of the Femboy KZ servers and their IPs",
+  aliases: "IPs",
   slash: "both",
   testOnly: true,
   permissions: ["ADMINISTRATOR"],

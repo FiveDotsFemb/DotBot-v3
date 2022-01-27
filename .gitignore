@@ -2,4 +2,4 @@ node_modules
 .env
 package-lock.json
 test-schema.ts 
-./commands/ping.ts
+!./commands/statusv2.ts

@@ -4,6 +4,7 @@ import { ICommand } from "wokcommands";
 export default {
   category: "Moderation",
   description: "Kicks a member",
+  aliases: "k",
   slash: "both",
   testOnly: true,
   guildOnly: true,

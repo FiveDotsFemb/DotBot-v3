@@ -4,6 +4,7 @@ import { ICommand } from "wokcommands";
 export default {
   category: "Moderation",
   description: "Bans a member",
+  aliases: "b",
   slash: "both",
   testOnly: true,
   guildOnly: true,
