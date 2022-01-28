@@ -8,7 +8,6 @@ export default {
   slash: "both",
   testOnly: true,
   guildOnly: true,
-  requireRoles: true,
   permissions: ["KICK_MEMBERS"],
   minArgs: 2,
   expectedArgs: "<user> <reason>",

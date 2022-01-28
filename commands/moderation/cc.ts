@@ -5,9 +5,8 @@ export default {
   description: "Deletes multiple messages at once.",
   slash: "both",
   testOnly: true,
-  permissions: ["ADMINISTRATOR"],
-  requireRoles: true,
-  // minArgs: 1,
+  permissions: ["MANAGE_MESSAGES"],
+  minArgs: 0,
   maxArgs: 1,
   expectedArgs: "[amount]",
 

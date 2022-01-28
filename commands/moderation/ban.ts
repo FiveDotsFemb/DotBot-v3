@@ -7,14 +7,15 @@ export default {
   aliases: "b",
   slash: "both",
   testOnly: true,
-  guildOnly: true,
-  requireRoles: true,
   permissions: ["BAN_MEMBERS"],
   minArgs: 2,
   expectedArgs: "<user> <reason>",
   expectedArgsTypes: ["USER", "STRING"],
 
-  callback: ({ message, interaction, args }) => {
+  callback: ({ message, interaction, args, guild }) => {
+    if (!guild) {
+      return "You can only use this in a server."
+    }
     const target = message
       ? message.mentions.members?.first()
       : (interaction.options.getMember("user") as GuildMember);

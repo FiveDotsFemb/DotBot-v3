@@ -9,15 +9,15 @@ dotenv.config();
 const client = new DiscordJS.Client({
   intents: [
     Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS,
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    Intents.FLAGS.GUILD_MEMBERS,
     Intents.FLAGS.GUILD_PRESENCES,
   ],
 });
 
 client.on("ready", async () => {
-  // await mongoose.connect(process.env.MONGO_URI || "", {
+  // await mongoose.connect(process.env.MONGO_URI! || "", {
   //   keepAlive: true,
   // });
 
