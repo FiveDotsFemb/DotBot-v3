@@ -3,12 +3,13 @@ import { ICommand } from "wokcommands";
 
 export default {
   category: "Moderation",
-  description: "Bans a member",
-  aliases: "b",
+  description: "Kicks a member",
+  aliases: "k",
   slash: "both",
   testOnly: true,
   guildOnly: true,
   requireRoles: true,
+  permissions: ["KICK_MEMBERS"],
   minArgs: 2,
   expectedArgs: "<user> <reason>",
   expectedArgsTypes: ["USER", "STRING"],
@@ -18,24 +19,21 @@ export default {
       ? message.mentions.members?.first()
       : (interaction.options.getMember("user") as GuildMember);
     if (!target) {
-      return "Please tag someone to ban.";
+      return "Please tag someone to kick.";
     }
-    if (!target.bannable) {
+    if (!target.kickable) {
       return {
         custom: true,
-        content: "Cannot ban that user.",
+        content: "Cannot kick that user.",
         ephemeral: true,
       };
     }
     args.shift();
     const reason = args.join(" ");
-    target.ban({
-      reason,
-      days: 7,
-    });
+    target.kick(reason);
     return {
       custom: true,
-      content: `You banned <@${target.id}>`,
+      content: `You kicked <@${target.id}>`,
       ephemeral: true,
     };
   },

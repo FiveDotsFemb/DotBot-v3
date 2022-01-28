@@ -22,7 +22,7 @@ client.on("ready", async () => {
   // });
 
   new WOKCommands(client, {
-    commandsDir: path.join(__dirname, "commands"),
+    commandsDir: path.join(__dirname, "commands/"),
     featuresDir: path.join(__dirname, "features"),
     typeScript: true,
     testServers: ["752232440579227848", "858419058135662622"],
