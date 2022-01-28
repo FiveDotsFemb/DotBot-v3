@@ -9,44 +9,33 @@ export default {
   ownerOnly: true,
   minArgs: 1,
   maxArgs: 2,
-  expectedArgs: "<activity> [status]",
+  expectedArgs: "<activity> <status>",
+  expectedArgsTypes: ["STRING"],
 
   callback: async ({ client, text, args }) => {
-    if (args[1] === "online") {
+    client.user?.setPresence({
+      activities: [
+        {
+          name: text,
+        },
+      ],
+    }); 
+    args.slice()
+    if (args[1] == "online") {
       client.user?.setPresence({
         status: "online",
-        activities: [
-          {
-            name: text,
-          },
-        ],
       });
-    } else if (args[1] === "idle") {
+    } else if (args[1] == "idle") {
       client.user?.setPresence({
         status: "idle",
-        activities: [
-          {
-            name: text,
-          },
-        ],
       });
-    } else if (args[1] === "dnd") {
+    } else if (args[1] == "dnd") {
       client.user?.setPresence({
         status: "dnd",
-        activities: [
-          {
-            name: text,
-          },
-        ],
       });
-    } else if (args[1] === "invisible") {
+    } else if (args[1] == "invisible") {
       client.user?.setPresence({
         status: "invisible",
-        activities: [
-          {
-            name: text,
-          },
-        ],
       });
     }
     return "Status updated.";
