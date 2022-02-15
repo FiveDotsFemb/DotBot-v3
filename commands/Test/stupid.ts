@@ -59,7 +59,7 @@ export default {
       if (collection.first()?.customId === "stupid_yes") {
       }
       await msgInt.editReply({
-        content: "You already pressed a button dumass.",
+        content: "You already pressed a button dumbass.",
         components: [],
       });
     });
